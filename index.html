@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--
+        Author: Stephanie Kane
+        Created: 2/18/20
+    -->
+    <head>
+        <title>Mapplication</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Web application to record representations and descriptions of discovered map tiles in a WestMarches Dungeons and Dragons campaign.">
+        <link rel="stylesheet"type="text/css" href="stylesheet.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    </head>
+    <body>
+        <header>
+            <h1 id="map_title">Amsurna</h1>
+        </header>
+        <main>
+            <div id="map">
+                <div class="row" id="row01">
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..." id="tile0101" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0101dropdown" class="tiledropdown"></select>
+                    </div>
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..."id="tile0102" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0102dropdown" class="tiledropdown"></select>
+                    </div>
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..."id="tile0103" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0103dropdown" class="tiledropdown"></select>
+                    </div>
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..."id="tile0104" src="town.png" alt="the town of Amsurna"/>
+                    </div>
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..."id="tile0105" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0105dropdown" class="tiledropdown"></select>
+                    </div>
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..."id="tile0106" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0106dropdown" class="tiledropdown"></select>
+                    </div>
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..."id="tile0107" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0107dropdown" class="tiledropdown"></select>
+                    </div>
+                </div>
+                <div class="row" id="row02">
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..."id="tile0201" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0201dropdown" class="tiledropdown"></select>
+                    </div>
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..."id="tile0202" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0202dropdown" class="tiledropdown"></select>
+                    </div>
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..."id="tile0203" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0203dropdown" class="tiledropdown"></select>
+                    </div>
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..."id="tile0204" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0204dropdown" class="tiledropdown"></select>
+                    </div>
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..."id="tile0205" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0205dropdown" class="tiledropdown"></select>
+                    </div>
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..."id="tile0206" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0206dropdown" class="tiledropdown"></select>
+                    </div>
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..."id="tile0207" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0207dropdown" class="tiledropdown"></select>
+                    </div>
+                </div>
+                <div class="row" id="row03">
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..."id="tile0301" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0301dropdown" class="tiledropdown"></select>
+                    </div>
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..."id="tile0302" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0302dropdown" class="tiledropdown"></select>
+                    </div>
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..."id="tile0303" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0303dropdown" class="tiledropdown"></select>
+                    </div>
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..."id="tile0304" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0304dropdown" class="tiledropdown"></select>
+                    </div>
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..."id="tile0305" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0305dropdown" class="tiledropdown"></select>
+                    </div>
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..."id="tile0306" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0306dropdown" class="tiledropdown"></select>
+                    </div>
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..."id="tile0307" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0307dropdown" class="tiledropdown"></select>
+                    </div>
+                </div>
+                <div class="row" id="row04">
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..."id="tile0401" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0401dropdown" class="tiledropdown"></select>
+                    </div>
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..."id="tile0402" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0402dropdown" class="tiledropdown"></select>
+                    </div>
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..."id="tile0403" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0403dropdown" class="tiledropdown"></select>
+                    </div>
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..."id="tile0404" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0404dropdown" class="tiledropdown"></select>
+                    </div>
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..."id="tile0405" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0405dropdown" class="tiledropdown"></select>
+                    </div>
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..."id="tile0406" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0406dropdown" class="tiledropdown"></select>
+                    </div>
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..."id="tile0407" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0407dropdown" class="tiledropdown"></select>
+                    </div>
+                </div>
+                <div class="row" id="row05">
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..."id="tile0501" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0501dropdown" class="tiledropdown"></select>
+                    </div>
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..."id="tile0502" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0502dropdown" class="tiledropdown"></select>
+                    </div>
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..."id="tile0503" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0503dropdown" class="tiledropdown"></select>
+                    </div>
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..."id="tile0504" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0504dropdown" class="tiledropdown"></select>
+                    </div>
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..."id="tile0505" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0505dropdown" class="tiledropdown"></select>
+                    </div>
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..."id="tile0506" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0506dropdown" class="tiledropdown"></select>
+                    </div>
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..."id="tile0507" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0507dropdown" class="tiledropdown"></select>
+                    </div>
+                </div>
+                <div class="row" id="row06">
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..." id="tile0601" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0601dropdown" class="tiledropdown"></select>
+                    </div>
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..." id="tile0602" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0602dropdown" class="tiledropdown"></select>
+                    </div>
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..." id="tile0603" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0603dropdown" class="tiledropdown"></select>
+                    </div>
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..." id="tile0604" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0604dropdown" class="tiledropdown"></select>
+                    </div>
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..." id="tile0605" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0605dropdown" class="tiledropdown"></select>
+                    </div>
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..." id="tile0606" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0606dropdown" class="tiledropdown"></select>
+                    </div>
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..." id="tile0607" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0607dropdown" class="tiledropdown"></select>
+                    </div>
+                </div>
+                <div class="row" id="row07">
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..." id="tile0701" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0701dropdown" class="tiledropdown"></select>
+                    </div>
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..." id="tile0702" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0702dropdown" class="tiledropdown"></select>
+                    </div>
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..." id="tile0703" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0703dropdown" class="tiledropdown"></select>
+                    </div>
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..." id="tile0704" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0704dropdown" class="tiledropdown"></select>
+                    </div>
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..." id="tile0705" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0705dropdown" class="tiledropdown"></select>
+                    </div>
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..." id="tile0706" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0706dropdown" class="tiledropdown"></select>
+                    </div>
+                    <div class="tilediv">
+                        <img class="tile" data-notes="Enter notes here..." id="tile0707" src="unexplored.png" alt="unexplored territory"/>
+                        <select id="tile0707dropdown" class="tiledropdown"></select>
+                    </div>
+                </div>
+            </div>
+            <div id="discussionBar">
+                <div class="rightcolumn" id="notes">
+                    <img id="selectedTileImg" src="town.png">
+                    <input type="button" id="saveTile" value="Save Tile Notes">
+                    <textarea id="tileNotesEditor"></textarea>
+                </div>
+                <div class="rightcolumn" id="todoList">
+
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!--
+                <ul id="links">
+                <li><a>link one</a></li>
+                <li><a>link two</a></li>
+                <li><a>link three</a></li>
+                <li><a>extras</a></li>
+            </ul>
+            -->
+            <input id="saveMap" type="button" value="Save!">
+        </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="terrains.js"></script>
+        <script src="indexscript.js"></script>
+    </body>
+    <!--
+    Background Photo by Andrzej Kryszpiniuk on Unsplash
+-->
+</html>

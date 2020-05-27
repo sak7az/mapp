@@ -1,0 +1,61 @@
+West Marches Campaign Map Application
+
+Interactive web application
+certain people can access and change
+anyone could potentially view it 
+
+Map
+    Square tiles, displaying nondescript image by default, signifying unexplored space
+    Each has a edit button over it. Opens a menu: 
+
+        Each has a dropdown closed set of pre-determined illustrated options: 
+          plains, 
+            hills, 
+            mountains, 
+            desert
+            swamp
+            settlement
+
+        Each tile has an associated field that displays onHover(?). A text description that can be edited by anyone with access
+            these notes should track who added them and be able to be archived. so maybe they should be itemized bullets
+
+Classes/Objects and fields: 
+    MapTile
+        terrain
+        description
+        gridLocation
+    Terrain 
+        image
+        currentTerrain
+    User
+        password
+        id
+
+
+Writing JSON file: 
+press save: 
+clears previous JSON file
+Create object for each tile 
+    for each: JSON.stringify(tileObject, null, 2);
+
+
+Rank features
+0 impossible to ship without it 
+1 very important but could ship without it 
+2 if everything goes great, this is nice to have 
+
+
+Features: 
+0 authentication
+0 text description
+0 terrain images
+    add onhover to images
+1 unexplored space icon
+1 popout editor
+2 onHover text
+2 itemized edit bullets
+2 archivable descriptions
+
+
+Authentication - enter game code in field. (a la jackbox.tv)
+
