@@ -38,7 +38,7 @@
         $('.tiledropdown').change(function(){
             var coordinates = this.id.substring(0,8);
             var newImageSrc = $(this).children("option:selected").val()+ ".png";
-            console.log(newImageSrc);
+            newImageSrc = "mapTiles/" + newImageSrc;
             $('#'+coordinates).attr("src", newImageSrc);
         });
 
@@ -69,7 +69,7 @@
         $('#tileNotesEditor').focusout(function(){
             if(selected != ""){
                 $(selected).attr("style", "-webkit-filter: none ;filter: none;");
-                $('#selectedTileImg').attr('src', 'unexplored.png');
+                $('#selectedTileImg').attr('src', 'mapTiles/unexplored.png');
                 $(selected).attr("data-notes", $(this).val());
                 $(this).val("");
                 selected = ("");
