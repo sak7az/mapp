@@ -1,5 +1,5 @@
 function formatTileSelector(row, column){
-            var tileSelector = "#tile"
+            var tileSelector = "tile"
             if (row < 10) {
                 tileSelector +="0";
                 tileSelector += row;
@@ -17,7 +17,7 @@ db.mapTiles.drop();
 for(var row=1; row <=17; row ++){
     for (var col=1; col<=17; col++){
         db.mapTiles.insertOne({
-            _id: formatTileSelector(row, col),
+            name: formatTileSelector(row, col),
             terrain: "unexplored",
             notes: "Enter notes here..."
         },{
@@ -27,7 +27,7 @@ for(var row=1; row <=17; row ++){
 }
 
 db.mapTiles.updateOne({
-    _id: "#tile0909"
+    name: "tile0909"
 },{
     $set: {terrain: "town"}
 })

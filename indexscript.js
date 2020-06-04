@@ -1,20 +1,7 @@
-/**
- * TODO
-    *todo list section on the right side
-    * tile onclick that 
-    *   displays notes in the notes section for that tile. 
-    *   highlights the tile selected
-    *figure out using JSON file to save states
- * 
- * Stretch TODOs
-    * free-form notes section on the right side. (maybe wanted/ongoing quests)
-    * 
-    * settings to change skins/name of map
-    *  
-    * https://gist.github.com/sstur/7379870 
- */
 
-    function populateDropDownMenus(){
+    var baseUrl = 'http://localhost:8080/api/amsurna/';
+
+    function populateDropDownMenus() {
         var allDropDowns = $(".tiledropdown");
         for (var i = 0; i< allDropDowns.length; i++){
             var currentDropDown = allDropDowns[i];
@@ -26,20 +13,63 @@
             }
         }
     }
+
+    function updateTileTerrain (tileId, newTerrain) {
+        var url = baseUrl + tileId;
+        var data = 'terrain=' + newTerrain;
+        $.ajax({
+            url: url,
+            type: 'PUT',
+            success: function (res) {},
+            data: data
+        });
+    };
+
+    function updateTileNotes (tileId, newNotes) {
+        var url = baseUrl + tileId;
+        var data = 'notes=' + newNotes;
+        $.ajax({
+            url: url,
+            type: 'PUT',
+            success: function (res) {},
+            data: data
+        });
+    }
+
+    function loadAllTiles(){
+        $.get(baseUrl, function (res) {
+            var tileArray = res.data;
+            for (var i =0; i< tileArray.length; i++){
+                var mapTile = tileArray[i];
+                var selector = "#" + mapTile.name;
+                var imgSrc = "mapTiles/" + mapTile.terrain + ".png";
+                $(selector).attr('src', imgSrc);
+                $(selector).attr('alt', mapTile.terrain);
+                $(selector).attr('data-notes', mapTile.notes);
+            }
+        });    
+    };
     
     $(document).ready(function(){
-
-        var selected = "#tile0104";
-
         populateDropDownMenus();
+        loadAllTiles();
+        var selected;
 
-        $('#tileNotesEditor').val($(selected).attr("data-notes"));
+        function periodicallySave(){
+            if(selected){
+                var notes = $('#tileNotesEditor').val();
+                updateTileNotes(selected.substr(1), notes);
+            }
+        }
+
+        var interval = setInterval(periodicallySave, 10000);
         
         $('.tiledropdown').change(function(){
-            var coordinates = this.id.substring(0,8);
-            var newImageSrc = $(this).children("option:selected").val()+ ".png";
-            newImageSrc = "mapTiles/" + newImageSrc;
-            $('#'+coordinates).attr("src", newImageSrc);
+            var terrain = $(this).children("option:selected").val();
+            var tileName = this.id.substring(0,8);
+            var newImageSrc = "mapTiles/" + terrain + ".png";
+            $('#'+ tileName).attr("src", newImageSrc);
+            updateTileTerrain(tileName, terrain);
         });
 
         $('.tilediv').hover(
@@ -56,6 +86,11 @@
         );
 
         $('.tile').click(function(){
+            if (selected){
+                $(selected).attr("style", "-webkit-filter: none ;filter: none;");
+                var notes = $('#tileNotesEditor').val();
+                updateTileNotes(selected.substr(1), notes);
+            }
             var imgSrc = $(this).attr('src');
             var token = $(this).attr('id');
             var notes = $(this).attr('data-notes');
@@ -66,55 +101,12 @@
             selected = "#" + token;            
         });
 
-        $('#tileNotesEditor').focusout(function(){
-            if(selected != ""){
-                $(selected).attr("style", "-webkit-filter: none ;filter: none;");
-                $('#selectedTileImg').attr('src', 'mapTiles/unexplored.png');
-                $(selected).attr("data-notes", $(this).val());
-                $(this).val("");
-                selected = ("");
-            }
-        });
-
         $('#saveTile').click(function(){
             if(selected != ""){
+                var newNotes = $('#tileNotesEditor').val();
+                updateTileNotes(selected.substr(1), newNotes);
                 $(selected).attr("data-notes", $('#tileNotesEditor').val());
             }
         });
-
-        $('#saveMap').click(function(){
-            saveMap();
-        })
-
-        function saveMap(){
-            var row = 1;
-            var column = 1; 
-            var newString = "";
-            while(true){
-                var selector = formatTileSelector(row, column);
-                if ($(selector).length){
-                    newString += JSON.stringify($(selector));
-                    column++;
-                } else if ($(formatTileSelector(row+1, 1)).length){
-                    row++;
-                    column = 1;
-                } else { break; }
-            }
-        }
-
-        function formatTileSelector(row, column){
-            var tileSelector = "#tile"
-            if (row < 10) {
-                tileSelector +="0";
-                tileSelector += row;
-            } else { tileSelector =+ row; }
-            if (column < 10) {
-                tileSelector += "0";
-                tileSelector += column;
-            } else { tileSelector += column; }
-            return tileSelector;
-        }
     });
-
-
-
+    
