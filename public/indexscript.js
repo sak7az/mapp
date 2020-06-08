@@ -1,5 +1,5 @@
 
-    var baseUrl = 'http://localhost:8080/api/amsurna/';
+    var baseUrl = 'https://amsurna-mapp.herokuapp.com/api/amsurna/';
 
     function populateDropDownMenus() {
         var allDropDowns = $(".tiledropdown");
