@@ -6,6 +6,7 @@ let uri = "mongodb+srv://skane:jffFGpKi37dl6NaI@amsurna-c9y7y.mongodb.net/Amsurn
 
 //Import apiRoutes
 let apiRoutes = require('./api-routes');
+app.use(express.static('public'));
 
 app.use(bodyParser.urlencoded({
     extended: true
