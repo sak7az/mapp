@@ -28,7 +28,7 @@ else { console.log("Db connected successfully"); }
 var port = process.env.PORT || 8080;
 
 //TODO - send page to port? obvs not absolute path from my computer
-app.get('/', (req, res) => res.sendFile('/Users/stephaniekane/development/Mapp/index.html'));
+app.get('/', (req, res) => res.send(''));
 
 app.use('/api', apiRoutes);
 app.listen(port, function() {
