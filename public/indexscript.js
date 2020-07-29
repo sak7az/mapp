@@ -49,7 +49,9 @@
             }
         });    
     };
-    
+
+
+            
     $(document).ready(function(){
         populateDropDownMenus();
         loadAllTiles();
@@ -108,5 +110,16 @@
                 $(selected).attr("data-notes", $('#tileNotesEditor').val());
             }
         });
+
+        var eventSource = new EventSource('/updates');
+
+
+        eventSource.onmessage = function(event){
+            console.log(`There/'s an update happening`);
+        }
+        eventSource.addEventListener('update', function(event) {
+            loadAllTiles();
+        });
+
     });
     

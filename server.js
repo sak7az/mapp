@@ -2,7 +2,11 @@ let express = require('express');
 let bodyParser = require('body-parser');
 let mongoose = require('mongoose');
 let app = express();
-let uri = "mongodb+srv://skane:jffFGpKi37dl6NaI@amsurna-c9y7y.mongodb.net/Amsurna?retryWrites=true&w=majority";
+let SSE = require('express-sse');
+//trying changeStream
+MapTile = require('./mapTileModel');
+let uri = 'mongodb+srv://skane:jffFGpKi37dl6NaI@';
+uri += 'amsurna-c9y7y.mongodb.net/Amsurna?retryWrites=true&w=majority';
 
 //Import apiRoutes
 let apiRoutes = require('./api-routes');
@@ -21,6 +25,17 @@ app.use((req, res, next) => {
 
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 var db = mongoose.connection;
+
+//create changeStream
+
+changeStream = MapTile.watch();
+let sse = new SSE();
+app.get('/updates', sse.init);
+
+changeStream.on('change', data=> {
+    console.log(data);
+    sse.send(data, 'update');
+});
 
 if(!db)  { console.log("Error connecting db"); }
 else { console.log("Db connected successfully"); }
