@@ -15,9 +15,18 @@
     <body>
         <header>
             <h1 id="map_title">Amsurna</h1>
-            <hr>
         </header>
         <main>
+            <div id="leftColumn" class="column">
+                <h3>Using the Map:</h3>
+                <ul>
+                    <li>Each square is approximately 10miles square and takes about half a day to travel on foot.</li>
+                    <li>When navigating in unexplored grids or at the boundary of mapped terrain, there is a chance you will be led astray.</li>
+                    <li>A successful survival or nature check will determine the exact grid you are in - the DC increases when off the charted area.</li>
+                    <li>Click a tile to see and edit notes about the area.</li>
+                </ul>                
+            </div>
+            </div>
             <div id="map">
                 <div class="row" id="row01">
                     <div class="tilediv">
@@ -1209,21 +1218,11 @@
                     </div>
                 </div>
             </div>
-            <div id="discussionBar">
+            <div id="rightColumn" class="column">
                 <div class="rightcolumn" id="notes">
                     <img id="selectedTileImg" src="mapTiles/unexplored.png">
                     <input type="button" id="saveTile" value="Save Tile Notes">
-                    <textarea id="tileNotesEditor"></textarea>
-                </div>
-                <div class="rightcolumn" id="info">
-                    <h3>Information:</h3>
-                    <ul>
-                        <li>Each square is approximately 10miles across.</li>
-                        <li>Traveling across a square takes about half of a day.</li>
-                        <li>When navigating in unexplored grids or at the boundary of mapped terrain, there is a chance you will be led astray.</li>
-                        <li>A successful survival or nature check will determine the exact grid you are in - the DC increases when off the charted area.</li>
-                        <li>Click a tile to see and edit notes about the area.</li>
-                    </ul>
+                    <textarea id="tileNotesEditor" rows="15"></textarea>
                 </div>
             </div>
         </main>

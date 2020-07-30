@@ -66,7 +66,7 @@
 
         var interval = setInterval(periodicallySave, 10000);
         
-        $('.tiledropdown').change(function(){
+        $('.tiledropdown').on("change click", function(){
             var terrain = $(this).children("option:selected").val();
             var tileName = this.id.substring(0,8);
             var newImageSrc = "mapTiles/" + terrain + ".png";
@@ -118,7 +118,7 @@
             console.log(`There/'s an update happening`);
         }
         eventSource.addEventListener('update', function(event) {
-            loadAllTiles();
+            loadAllTiles;
         });
 
     });

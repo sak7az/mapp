@@ -10,18 +10,22 @@ body {
 }
 
 header{
-    letter-spacing: .3em;
+    letter-spacing: .8em;
     top: 0;
+    font-size: 1.5em;
+    color: whitesmoke;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
     width: 100%;
-    height: 100px;
+    height: 70px;
+    background: url('mapTiles/expanse.png');
+    background-size: 7%;
 }
 
-hr {
-    border: black solid 1px;
-}
+
 
 h1{
-    margin-top: 40px;
+    margin-top: 5px;
 }
 
 footer{
@@ -29,12 +33,13 @@ footer{
     width: 100%;
     height: 100px;
     background: whitesmoke;
+    display: none;
 }
 
 main{
     font-family: Open Sans;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 li {
@@ -55,55 +60,62 @@ li {
 }
 
 .tile {
-    max-width: 70px;
-    max-height: 70px;
+    max-width: 45px;
+    max-height: 45px;
     display: inline;
     pointer-events: fill;
+    border: black solid 1px;
+    border-radius: 10px;
+    background: white;
 }
 
 #selectedTileImg {
     display: inline-block;
     width: 70px;
     height: 70px;
+    border: thin black solid;
+    border-radius: 10px;
 }
 
 #tileNotesEditor {
-    width: 95%;
-    height: 95%;
+    margin-top: 10px;
+    width: 80%;
+    height: auto;
 }
 
 .tilediv {
     display: inline-block;
-    max-height: 70px;
-    max-width: 70px;
+    margin:  -3px -1px -3px -1px;
+    width: 45px;
+    height: 45px;
 }
 
 .tiledropdown {
-    position: absolute;
-    margin-left: -70px;
-    width: 70px;
+    position: relative;
+    margin-left: -30px;
+    width: 70%;
     opacity: 0;
 }
 
-#discussionBar{
-    display: flex;
-    flex-direction: column;
-    width: 350px;
-    margin: 50px 30px 30px 0px;
-}
-
-.rightcolumn {
+.column {
+    width: 300px;
+    height: 800px;
+    margin: 100px 15px 100px 15px;
     background: white;
     height: 50%;
-    width: 100%;
-    margin: 15px 0 15px 0 ;
+    padding: 7px;
     overflow: scroll;
-    border: 1px black dashed;
+    border: 1px black solid;
+    border-radius: 10px;
 }
 
 #map{
     display: inline-block;
-    margin: 50px 30px 50px 50px;
+    margin: 55px 50px 50px 50px;
+    padding: 5px;
+    overflow: scroll;
+    border: black solid 1px;
+    border-radius: 10px;
 }
 
 select.icon-menu option {
@@ -113,10 +125,20 @@ select.icon-menu option {
 }
 
 #saveTile {
-    width: 50%;
-    margin: auto;
+    width: auto;
+    background-color: #C3C4C8;
+    font-size: 1.1em;
+    padding: 7px;
+    border: .5px solid black;
+    border-radius: 5px;
+    margin: 10px;
     display: block;
     margin: auto;
+}
+
+#saveTile:hover {
+    background-color: gray;
+    color: white;
 }
 
 /* 
