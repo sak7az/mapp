@@ -118,7 +118,7 @@
             console.log(`There/'s an update happening`);
         }
         eventSource.addEventListener('update', function(event) {
-            loadAllTiles;
+            loadAllTiles();
         });
 
     });
